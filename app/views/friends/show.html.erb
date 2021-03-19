@@ -1,34 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @friend.first_name %>
-</p>
+<div class="card">
+  <div class="card-body">
+    <h1>
+      <%= @friend.first_name %>
+      <%= @friend.last_name %>
+      <% if @friend.likes_icecream %>
+        <span class="badge bg-secondary">🍨</span>
+      <% end %>
+    </h1>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @friend.last_name %>
-</p>
+    <p class="lead">
+      <%= @friend.email %>
+      <%= @friend.phone %>
+    </p>
 
-<p>
-  <strong>Birthday:</strong>
-  <%= @friend.birthday %>
-</p>
+    <p>
+      <strong>Birthday:</strong>
+      <%= @friend.birthday %>
+    </p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @friend.phone %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @friend.email %>
-</p>
-
-<p>
-  <strong>Likes icecream:</strong>
-  <%= @friend.likes_icecream %>
-</p>
-
-<%= link_to 'Edit', edit_friend_path(@friend) %> |
-<%= link_to 'Back', friends_path %>
+    <%= link_to 'Edit', edit_friend_path(@friend), class:"btn btn-primary" %>
+    <%= link_to 'Back', friends_path, class:"btn btn-primary" %>
+  </div>
+</div>

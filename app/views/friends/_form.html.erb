@@ -1,47 +1,49 @@
-<%= form_with(model: friend) do |form| %>
-  <% if friend.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(friend.errors.count, "error") %> prohibited this friend from being saved:</h2>
+<div class="mb-4">
+  <%= form_with(model: friend) do |form| %>
+    <% if friend.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(friend.errors.count, "error") %> prohibited this friend from being saved:</h2>
 
-      <ul>
-        <% friend.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% friend.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group mb-2">
+      <%= form.label :first_name %>
+      <%= form.text_field :first_name, class:"form-control", placeholder:"Bob" %>
+    </div>
+
+    <div class="form-group mb-2">
+      <%= form.label :last_name %>
+      <%= form.text_field :last_name, class:"form-control", placeholder:"Ross" %>
+    </div>
+
+    <div class="form-group mb-2">
+      <%= form.label :birthday, class:"d-block" %>
+      <%= form.date_select :birthday, {:start_year => 1900, :end_year => Time.now.year}, {:class => "form-select me-2 d-inline-block w-auto"}%>
+    </div>
+
+    <div class="form-group mb-2">
+      <%= form.label :phone %>
+      <%= form.text_field :phone, class:"form-control", placeholder:"+1 123 456 7890" %>
+    </div>
+
+    <div class="form-group mb-2">
+      <%= form.label :email %>
+      <%= form.text_field :email, class:"form-control", placeholder:"email@example.com" %>
+    </div>
+
+    <div class="form-group mb-2">
+      <%= form.label :likes_icecream %>
+      <%= form.check_box :likes_icecream, class:"form-check-input" %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit class:"btn btn-primary" %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :birthday %>
-    <%= form.date_select :birthday %>
-  </div>
-
-  <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone %>
-  </div>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :likes_icecream %>
-    <%= form.check_box :likes_icecream %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
