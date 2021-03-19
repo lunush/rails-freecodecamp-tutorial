@@ -12,6 +12,9 @@
 
   <body>
     <%= render 'home/header'%>
+    <% if notice %>
+      <%= render 'layouts/alert'%>
+    <% end %>
     <main class="container p-0">
       <%= yield %>
     </main>
