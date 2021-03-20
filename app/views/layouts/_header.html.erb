@@ -7,9 +7,6 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav d-flex m-0 w-100">
-          <li class="nav-item">
-            <%= link_to "List", friends_path, class:"nav-link" %>
-          </li>
           <% if user_signed_in? %>
             <li class="nav-item">
               <%= link_to "New", new_friend_path, class:"nav-link" %>
@@ -19,7 +16,7 @@
             </li>
           <% end %>
           <li class="nav-item me-auto">
-            <%= link_to "About", home_about_path, class:"nav-link" %>
+            <%= link_to "About", about_path, class:"nav-link" %>
           </li>
           <% if user_signed_in? %>
             <li class="nav-item">

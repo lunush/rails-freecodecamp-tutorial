@@ -11,13 +11,12 @@
   </head>
 
   <body>
-    <%= render 'home/header'%>
+    <%= render 'layouts/header'%>
     <% if notice %>
       <%= render 'layouts/alert'%>
     <% end %>
     <main class="container p-0">
       <%= yield %>
     </main>
-    <%= render 'home/footer'%>
   </body>
 </html>
