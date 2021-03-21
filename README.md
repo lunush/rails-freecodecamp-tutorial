@@ -1,24 +1,17 @@
-# README
+# Friends App
+This is a full stack application made with Ruby on Rails 6. It is made with a tutorial made
+available by FreeCodeCamp with some minor differences: https://youtube.com/watch?v=fmyvWz5TUWg
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Screenshots
+![Preview 1](images/preview1.png)
+![Preview 2](images/preview2.png)
+![Preview 3](images/preview3.png)
+![Preview 4](images/preview4.png)
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Run locally
+You need to have rails installed
+```sh
+git clone https://github.com/lunush/rails-freecodecamp-tutorial
+cd rails-freecodecamp-tutorial
+rails server
+```
