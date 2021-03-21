@@ -15,21 +15,23 @@
 
   <tbody>
     <% @friends.each do |friend| %>
-      <tr>
-        <td><%= friend.first_name %></td>
-        <td><%= friend.last_name %></td>
-        <td><%= friend.birthday %></td>
-        <td><%= friend.phone %></td>
-        <td><%= friend.email %></td>
-        <td>
-          <% if friend.likes_icecream %>
-            ✔️
-          <% end %>
-        </td>
-        <td><%= link_to 'Show', friend, class:"btn btn-primary" %></td>
-        <td><%= link_to 'Edit', edit_friend_path(friend), class:"btn btn-primary" %></td>
-        <td><%= link_to 'Delete', friend, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></td>
-      </tr>
+      <% if friend.user == current_user %>
+        <tr>
+          <td><%= friend.first_name %></td>
+          <td><%= friend.last_name %></td>
+          <td><%= friend.birthday %></td>
+          <td><%= friend.phone %></td>
+          <td><%= friend.email %></td>
+          <td>
+            <% if friend.likes_icecream %>
+              ✔️
+            <% end %>
+          </td>
+          <td><%= link_to 'Show', friend, class:"btn btn-primary" %></td>
+          <td><%= link_to 'Edit', edit_friend_path(friend), class:"btn btn-primary" %></td>
+          <td><%= link_to 'Delete', friend, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
