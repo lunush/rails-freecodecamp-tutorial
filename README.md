@@ -1,6 +1,6 @@
 # Friends App
 This is a full stack application made with Ruby on Rails 6. It is made with a tutorial made
-available by FreeCodeCamp with some minor differences: https://youtube.com/watch?v=fmyvWz5TUWg
+available by FreeCodeCamp with some minor differences.
 
 ## Screenshots
 ![Preview 1](images/preview1.png)
